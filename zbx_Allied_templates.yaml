@@ -1,6 +1,6 @@
 zabbix_export:
   version: '6.0'
-  date: '2023-09-08T10:44:45Z'
+  date: '2023-09-08T12:25:42Z'
   groups:
     - uuid: 36bff6c29af64692839d077febfc7079
       name: 'Templates/Network devices'
@@ -8,10 +8,6 @@ zabbix_export:
     - uuid: 4454ba65ffc04d78a0f69e81ece6584b
       template: 'Allied Telesis'
       name: 'Allied Telesis'
-      description: |
-        This Template is based on Template Module Generic SNMP
-        This Template is based on Template Module Interfaces SNMP
-        This Template is based on Template Module EtherLike-MIB SNMP
       templates:
         - name: 'Template Module EtherLike-MIB SNMP'
         - name: 'Template Module Generic SNMP'
@@ -529,7 +525,8 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: '1.3.6.1.4.1.207.8.4.4.3.12.3.1.7.1.1.{#SNMPINDEX}'
               key: 'system.tempsta[systempsta.{#SNMPINDEX}]'
-              units: ℃
+              valuemap:
+                name: 'Temp Status'
               tags:
                 - tag: Application
                   value: Status
